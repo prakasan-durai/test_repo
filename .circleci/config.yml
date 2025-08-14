@@ -6,15 +6,9 @@ jobs:
     steps:
       - checkout
       - run: "echo Hello Earth"
-  say-bye:
-    docker:
-      - image: cimg/base:current
-    steps:
-      - checkout
       - run: "echo Goodbye Earth"
 
 workflows:
   say-hello-workflow: 
     jobs:
       - say-hello
-      - say-bye

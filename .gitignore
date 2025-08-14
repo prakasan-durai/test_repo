@@ -1,0 +1,22 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# macOS
+.DS_Store
+
+# Build outputs
+/out/
+build/
+target/
+
+# Logs
+*.log
+
+# Dependency directories
+node_modules/
+venv/
+.env
+
+# Others
+*.class
