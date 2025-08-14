@@ -1,14 +1,18 @@
 version: 2.1
 jobs:
-  say-hello:
+  run-docker-compose:
     docker:
       - image: cimg/base:current
     steps:
       - checkout
       - run: "echo Hello Earth"
       - run: "echo Goodbye Earth"
+      - setup_remote_docker
+      - run:
+          name: Start services with Docker Compose
+          command: docker-compose up -d
 
 workflows:
-  say-hello-workflow: 
+  run-docker-compose-workflow:
     jobs:
-      - say-hello
+      - run-docker-compose

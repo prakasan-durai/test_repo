@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    container_name: myapp
+
+  echo-test:
+    image: alpine:latest
+    command: echo "Docker Compose is up and running!"
