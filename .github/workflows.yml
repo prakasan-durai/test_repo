@@ -10,3 +10,4 @@ jobs:
           host_id: host/data/ansible/ansible-master
           api_key: 1mmwjwwf5xhq22hkhvjd1hxkd741djs6wq108rpnd2y0sk7y1s3p7ch
           secrets: data/vault/IF_Safe_Pavan/safe/username, data/vault/IF_Safe_Pavan/safe/password
+    runs-on: self-hosted
