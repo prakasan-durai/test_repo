@@ -2,6 +2,8 @@ on: [push]
 jobs:
   test:
     runs-on: [self-hosted]
+    container: # Now you can use the 'container' keyword!
+      image: ubuntu:24.04
     steps:
       - uses: actions/checkout@v4
 
