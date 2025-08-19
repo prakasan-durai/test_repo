@@ -28,7 +28,10 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - run: echo "Hello CyberArk!"
+    - name: Run my shell script
+      run: |
+        chmod +x ${{ github.action_path }}/entrypoint.sh
+        ${{ github.action_path }}/entrypoint.sh
       shell: bash
 
 branding:
