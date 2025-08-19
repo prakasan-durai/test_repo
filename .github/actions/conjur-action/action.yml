@@ -26,17 +26,11 @@ inputs:
   certificate:
     description: 'The Self-Signed SSL Certificate for your CyberArk Conjur instance'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.url }}
-    - ${{ inputs.account }}
-    - ${{ inputs.host_id }}
-    - ${{ inputs.api_key }}
-    - ${{ inputs.authn_token_file }}
-    - ${{ inputs.authn_id }}
-    - ${{ inputs.secrets }}
-    - ${{ inputs.certificate }}
+  using: 'composite'
+  steps:
+    - run: echo "Hello CyberArk!"
+      shell: bash
+
 branding:
   icon: 'lock'
   color: 'blue'
