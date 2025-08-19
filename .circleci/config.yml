@@ -1,18 +1,17 @@
 version: 2.1
+orbs:
+  conjur-circleci: cyberark/conjur-circleci-orb@0.0.1
 jobs:
-  run-docker-compose:
+  run-job:
     docker:
       - image: cimg/base:current
     steps:
-      - checkout
       - run: "echo Hello Earth"
       - run: "echo Goodbye Earth"
-      - setup_remote_docker
-      - run:
-          name: Start services with Docker Compose
-          command: docker-compose up -d
+      - conjur-circleci/retrieve_secret:
+          secrets: "data/circleci/apps/safe/secret2|sql_username;data/circleci/apps/safe/secret1;"
 
 workflows:
-  run-docker-compose-workflow:
+  use-my-orb:
     jobs:
-      - run-docker-compose
+      - run-job
