@@ -9,6 +9,7 @@ jobs:
       - run: "echo Hello"
       - run: "echo Goodbye Earth"
       - conjur-circleci/retrieve_secret:
+          url: "https://conjur_appliance_url"
           secrets: "data/circleci/apps/safe/secret2|sql_username;data/circleci/apps/safe/secret1;"
 
 workflows:
