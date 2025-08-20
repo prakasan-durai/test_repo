@@ -30,8 +30,8 @@ runs:
   steps:
     - name: Run my shell script
       run: |
-        chmod +x ${{ github.action_path }}/entrypoint.sh
-        ${{ github.action_path }}/entrypoint.sh \
+        chmod +x "${{ github.action_path }}/entrypoint.sh"
+        bash "${{ github.action_path }}/entrypoint.sh" \
           "${{ inputs.url }}" \
           "${{ inputs.account }}" \
           "${{ inputs.host_id }}" \
